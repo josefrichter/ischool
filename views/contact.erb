@@ -12,6 +12,36 @@
 		<script type="text/javascript" src="http://use.typekit.com/fht3iwq.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+		
+		<script type="text/javascript">
+		      $(document).ready(function(){
+
+		        // set all input.text default value according to alt attribute
+		        $("input.text, textarea").each(function(){
+		          $(this).val($(this).attr("alt"));
+		        });
+
+		        // clear input.text on focus, if still in default
+		        $("input.text, textarea").focus(function() {
+
+		          if($(this).val()==$(this).attr("alt")) {
+		            $(this).val("");
+		          }
+		        });
+
+		        // if field is empty afterward, add text again
+		        $("input.text, textarea").blur(function() {
+		          if($(this).val()=="") {
+		            $(this).val($(this).attr("alt"));
+		          }
+		        });
+
+		      });
+
+		</script>
+		
+		
 	</head>
 	
 	<body>
@@ -56,8 +86,8 @@
 						<h6>Send us a question or message</h6>
 
 						<form action="contact_submit" method="post" accept-charset="utf-8">
-							<input type="text" name="contact" value="your contact (email or phone to answer to)" id="contact">
-							<textarea name="body" rows="8" cols="40">your message or question</textarea>
+							<input class="text" type="text" name="contact" value="your contact (email or phone to answer to)" alt="your contact (email or phone to answer to)" id="contact">
+							<textarea class="text" name="body" rows="8" cols="40" alt="your message or question"></textarea>
 
 							<p><input type="submit" value="Send!"></p>
 						</form>
