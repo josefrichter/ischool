@@ -153,7 +153,7 @@ end
 post '/contact_submit' do
   Pony.mail(
     :to => 'pepa007@seznam.cz', 
-    :from => params[:name], 
+    :from => params[:contact], 
     :subject => 'Email from web', 
     :body => params[:body],
     :via => :smtp,
