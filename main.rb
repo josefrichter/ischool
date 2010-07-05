@@ -151,7 +151,21 @@ get '/news' do
 end
 
 post '/contact_submit' do
-  Pony.mail(:to => 'pepa007@seznam.cz', :from => params[:name], :subject => 'Email from web', :body => params[:body])
+  Pony.mail(
+    :to => 'pepa007@seznam.cz', 
+    :from => params[:name], 
+    :subject => 'Email from web', 
+    :body => params[:body],
+    :via => :smtp,
+    :via_options => {
+      :address        => "smtp.sendgrid.net",
+      :port           => "25",
+      :authentication => :plain,
+      :user_name      => ENV['SENDGRID_USERNAME'],
+      :password       => ENV['SENDGRID_PASSWORD'],
+      :domain         => ENV['SENDGRID_DOMAIN']  
+    }
+  )
   #redirect '/contact'
   erb :contact, :locals => { :status => true }, :layout => false
 end
