@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'sinatra'
 require 'ruby-debug'
+require 'pony' # for sending emails
 
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/vendor/sequel'
 require 'sequel'
@@ -40,20 +41,20 @@ helpers do
 	end
 end
 
-layout 'layout'
+layout 'school_layout'
 
 ### Public
 
-get '/' do
+get '/news-original' do
 	posts = Post.reverse_order(:created_at).limit(10)
-	erb :index, :locals => { :posts => posts }, :layout => false
+	erb :news_original, :locals => { :posts => posts }, :layout => false
 end
 
 get '/past/:year/:month/:day/:slug/' do
 	post = Post.filter(:slug => params[:slug]).first
 	halt [ 404, "Page not found" ] unless post
 	@title = post.title
-	erb :post, :locals => { :post => post }
+	erb :post, :locals => { :post => post }, :layout => :school_layout
 end
 
 get '/past/:year/:month/:day/:slug' do
@@ -63,7 +64,7 @@ end
 get '/past' do
 	posts = Post.reverse_order(:created_at)
 	@title = "Archive"
-	erb :archive, :locals => { :posts => posts }
+	erb :archive, :locals => { :posts => posts }, :layout => :school_layout
 end
 
 get '/past/tags/:tag' do
@@ -96,7 +97,7 @@ end
 
 get '/posts/new' do
 	auth
-	erb :edit, :locals => { :post => Post.new, :url => '/posts' }
+	erb :edit, :locals => { :post => Post.new, :url => '/posts' }, :layout => :school_layout
 end
 
 post '/posts' do
@@ -110,7 +111,7 @@ get '/past/:year/:month/:day/:slug/edit' do
 	auth
 	post = Post.filter(:slug => params[:slug]).first
 	halt [ 404, "Page not found" ] unless post
-	erb :edit, :locals => { :post => post, :url => post.url }
+	erb :edit, :locals => { :post => post, :url => post.url }, :layout => :school_layout
 end
 
 post '/past/:year/:month/:day/:slug/' do
@@ -122,5 +123,34 @@ post '/past/:year/:month/:day/:slug/' do
 	post.body = params[:body]
 	post.save
 	redirect post.url
+end
+
+# skolka custom pages
+
+get '/' do
+  erb :index, :layout => false
+end
+
+get '/junior-school' do
+  erb :junior_school, :layout => false
+end
+
+get '/gallery' do
+  erb :gallery, :layout => false
+end
+
+get '/contact' do
+  erb :contact, :layout => false
+end
+
+get '/news' do
+  posts = Post.reverse_order(:created_at).limit(5)
+  erb :news, :locals => { :posts => posts }, :layout => :school_layout
+end
+
+post '/contact_submit' do
+  Pony.mail(:to => 'pepa007@seznam.cz', :from => params[:name], :subject => 'Email from web', :body => params[:body])
+  #redirect '/contact'
+  erb :contact, :locals => { :status => true }, :layout => false
 end
 

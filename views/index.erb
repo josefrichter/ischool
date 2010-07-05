@@ -1,72 +1,123 @@
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title><%= Blog.title %></title>
-	<link href="/main.css" rel="stylesheet" type="text/css" />
-	<link href="/feed" rel="alternate" title="Primary Feed" type="application/atom+xml" />
-</head>
-<body>
-<div id="header">
-	<div id="logo">
-		<h1><a href="/"><%= Blog.title %></a></h1>
-		<p>by <%= Blog.author %></p>
-	</div>
-</div>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/strict.dtd">
 
-<div id="content">
-	<% posts.each do |post| %>
-	<div class="post">
-		<p class="date"><%= post[:created_at].strftime("%b") %><b><%= post[:created_at].strftime("%d") %></b></p>
-		<h2 class="title"><a href="<%= post.url %>"><%= post[:title] %></a></h2>
-		<p class="meta"><small>
-			<%= post.linked_tags %>
-			<% if Blog.disqus_shortname %>
-				| <a href="<%= post.url %>#disqus_thread">comments</a>
-			<% end %>
-		</small></p>
-		<div class="entry">
-			<%= post.summary_html %>
-			<% if post.more? %>
-				<a href="<%= post.url %>">Continue reading &raquo;</a>
-			<% end %>
-		</div>
-	</div>
-	<% end %>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>International School Olomouc homepage</title>
+		
+		<link rel="stylesheet" href="css/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="css/custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		
+		<script type="text/javascript" src="http://use.typekit.com/fht3iwq.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-	<% if posts.empty? %>
-		<h2><p>Looks like this is a fresh install of Scanty.</p><p><a href="/auth">Log in</a>, then <a href="/posts/new">create a post</a>.</p></h2>
-	<% else %>
-		<div id="older_posts">
-			<a href="/past">Archive</a>
-		</div>
-	<% end %>
+		<link type="text/css" href="css/cupertino/jquery-ui-1.8.2.custom.css" rel="stylesheet" />	
+		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
+		<script type="text/javascript" src="js/polaroid.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		
+	</head>
+	
+	<body>
+	                
+		<div id="wrapper">
+			
+			<div id="header">
+				<img id="logo" src="images/logo.png" width="150" height="58" alt="Logo">
+			</div><!-- #header -->
+			
+			<hr />
+			 
+			<div id="navigation">
+				<ul>
+					<li><a class="active" href="/">homepage</a></li>
+					<li><a href="preschool">preschool</a></li>
+					<li><a href="junior-school">junior school</a></li>
+					<li><a href="staff">staff</a></li>
+					<li><a href="contact">contact</a></li>
+					<li><a href="news">news</a></li>
+					<li><a href="gallery">gallery</a></li>
+				</ul>
+			</div><!-- #navigation -->
+			
+			<hr />
+			
+			<div id="body">
+				
+				<div class="banner homepage">
+					
+					<div class="column">
+						<h3 class="nospacing">School can be</h3>
+						<h1 class="nospacing">fun &amp; useful</h1>
+						<h3 class="nospacing">at the same time</h3>
+						<h4><br/>your children will get internationally recognized education taught in English</h4>
+					</div><!-- .column -->
+					
+					<div class="column">
+						
+						<div id="preschool_meta">
+							<h3>Preschool</h3>
+							<p>for children<br/>
+							aged 3 to 6</p><br/>
+							<a href="/prechool">more info&hellip;</a>
+						</div><!-- #preschool_meta -->
+						
+						<div id="juniorschool_meta">
+							<h3>Junior school</h3>
+							<p>for children<br/>
+							aged 6 to 11</p><br/>
+							<a href="junior-school">more info&hellip;</a>
+						</div><!-- #juniorschool_meta -->
+						
+					</div><!-- .column -->
+					
+				</div><!-- .banner -->
+				
+				<div class="fold">
+					
+					<div class="column">
+						<h6>Who we are</h6>
 
-	<% if admin? %>
-		<div id="new_post"><a href="/posts/new"">New post</a></div>
-	<% end %>
-</div>
+						<p>A small but growing <strong>family-like private preschool and junior school</strong> offering an international style <strong>program in English</strong> with a particular emphasis on the development of international mindedness.</p>
 
-<% if Blog.disqus_shortname %>
-	<script type="text/javascript">
-	//<[CDATA[
-	(function() {
-		var links = document.getElementsByTagName('a');
-		var query = '?';
-		for(var i = 0; i < links.length; i++) {
-			if(links[i].href.indexOf('#disqus_thread') >= 0) {
-				query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
-			}
-		}
-		document.write('<script type="text/javascript" src="http://disqus.com/forums/<%= Blog.disqus_shortname %>/get_num_replies.js' + query + '"></' + 'script>');
-		})();
-	//]]>
-	</script>
-<% end %>
+						<p>As an international school we follow specific standards that regulate our program and determine our curriculum. The Curriculum is modelled on the <strong>International Primary Curriculum</strong> as well as the <strong>Cambridge Primary Curriculum Framework</strong> which has its roots in the <strong>National Curriculum for England</strong>, but has been developed specifically for education internationally.</p>
+					</div><!-- .column -->
+					
+					<div class="column">
+						<h6>Some views from our school</h6>
+            
+            <!--<img id="homepage_photos" src="images/photos_temp.png" width="456" height="328" alt="Photos Temp">-->
+						<div class="pics_wrapper">
+					  </div><!-- .pics_wrapper -->
+						
+					</div><!-- .column -->
+					
+				</div><!-- .fold -->
+				
+				<div class="fold">
+					<div class="column">
+						<h6>Our credentials</h6>
 
-<div id="footer">
-	<p id="legal">
-	Content by <%= Blog.author %> | 
-	Design adapted from <a href="http://www.freecsstemplates.org/preview/replenish">Replenish</a>
-</div>
-</body>
+						<p>We are a <strong>full member</strong> of the International Primary Curriculum organization and a <strong>registered and approved</strong> Cambridge International Examination Centre offering internationally recognized primary qualifications.</p>
+
+						<p>The primary school is approved by the Czech Ministry of Education as provider of compulsory school education in the Czech Republic.</p> 
+
+						<p>Preschool is registered in the Czech School Register.</p>
+					</div><!-- .column -->
+					
+					<div class="column">
+						<h6>&nbsp;</h6>
+						<p><img src="images/logos_credentials.png" width="280" height="172" alt="Logos Credentials"></p>	
+					</div><!-- .column -->
+					
+				</div><!-- .fold -->
+				
+			</div><!-- #body -->
+			
+		</div><!-- #wrapper -->
+		
+	</body>
+	
 </html>

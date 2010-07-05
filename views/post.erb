@@ -1,15 +1,18 @@
-<div class="postzoom">
-	<h2 class="title"><%= post.title %></h2>
-	<p class="meta"><small><%= post.linked_tags %></small></p>
-	<p class="meta"><%= post.created_at %></p>
-	<div class="entry">
-		<%= post.body_html %>
-	</div>
-	<% if admin? %>
-		<div class="edit"><a href="<%= post.url %>edit">edit</a></div>
-	<% end %>
-</div>
+<div id="news">
+	<div class="post">
 
-<% if Blog.disqus_shortname %>
-	<div id="disqus_thread"></div><script type="text/javascript" src="http://disqus.com/forums/<%= Blog.disqus_shortname %>/embed.js"></script><noscript><a href="http://<%= Blog.disqus_shortname %>.disqus.com/?url=ref">View the discussion thread.</a></noscript><a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-<% end %>
+		<h6><%= post[:title] %><span class="meta"> - <%= post[:created_at].strftime("%d %b %Y") %></span></h6>
+
+		<div class="entry">
+			<%= post.body_html %>
+		</div>
+		
+		<div class="controls">
+			<a href="/news">&laquo; back to all news</a>
+			<% if admin? %>
+				 - <a href="<%= post.url %>edit">edit this post</a>
+			<% end %>
+		</div>
+		
+	</div>
+</div>

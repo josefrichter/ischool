@@ -30,7 +30,8 @@ class Post < Sequel::Model
 	end
 
 	def summary
-		@summary ||= body.match(/(.{200}.*?\n)/m)
+		#@summary ||= body.match(/(.{200}.*?\n)/m)
+		@summary ||= body.match(/(^.{0,500}.*?)/m)
 		@summary || body
 	end
 
@@ -39,8 +40,9 @@ class Post < Sequel::Model
 	end
 
 	def more?
-		@more ||= body.match(/.{200}.*?\n(.*)/m)
-		@more
+		#@more ||= body.match(/.{200}.*?\n(.*)/m)
+		#@more
+		body.length > 500
 	end
 
 	def linked_tags
