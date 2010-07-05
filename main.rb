@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'sinatra'
-require 'ruby-debug'
+#require 'ruby-debug'
 require 'pony' # for sending emails
 
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/vendor/sequel'
