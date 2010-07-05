@@ -13,7 +13,8 @@ configure do
 	Blog = OpenStruct.new(
 		:title => 'CBIS news',
 		:author => 'CBIS',
-		:url_base => 'http://localhost:4567/',
+		#:url_base => 'http://localhost:4567/',
+		:url_base => 'http://ischool.heroku.com/',
 		:admin_password => 'cbis2010',
 		:admin_cookie_key => 'cbis_admin',
 		:admin_cookie_value => '913ace5851d6d976',
