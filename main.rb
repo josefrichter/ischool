@@ -97,7 +97,8 @@ post '/auth' do
 end
 
 get '/posts/new' do
-	auth
+	#auth
+	halt [ 401, 'Not authorized' ] unless admin?
 	erb :edit, :locals => { :post => Post.new, :url => '/posts' }, :layout => :school_layout
 end
 
