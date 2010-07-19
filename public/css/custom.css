@@ -24,6 +24,16 @@ hr {
 	margin:50px 0;
 }
 
+#language {
+	float:right;
+	margin-top:1em;
+	margin-right:-4em;
+}
+
+#language a {
+	color:#999;
+}
+
 /* --- NAVIGATION --- */
 
 #navigation {
@@ -243,4 +253,15 @@ table.archive td {
 #edit_post textarea {
 	width:60em;
 	height:10em;
+}
+
+/* --- STAFF ---*/
+
+.teacher_profile {
+	margin-bottom:5em;
+}
+
+.teacher_profile .contact img {
+	float:left;
+	margin-right:20px;
 }

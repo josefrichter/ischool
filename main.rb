@@ -104,7 +104,7 @@ end
 
 post '/posts' do
 	auth
-	post = Post.new :title => params[:title], :tags => params[:tags], :body => params[:body], :created_at => Time.now, :slug => Post.make_slug(params[:title])
+	post = Post.new :title => params[:title], :tags => params[:tags], :body => params[:body], :created_at => Time.now, :slug => Post.make_slug(params[:title]), :english => params[:english]
 	post.save
 	redirect post.url
 end
@@ -116,13 +116,14 @@ get '/past/:year/:month/:day/:slug/edit' do
 	erb :edit, :locals => { :post => post, :url => post.url }, :layout => :school_layout
 end
 
-post '/past/:year/:month/:day/:slug/' do
+post '/past/:year/:month/:day/:slug/' do #update
 	auth
 	post = Post.filter(:slug => params[:slug]).first
 	halt [ 404, "Page not found" ] unless post
 	post.title = params[:title]
 	post.tags = params[:tags]
 	post.body = params[:body]
+	post.english = params[:english]
 	post.save
 	redirect post.url
 end
@@ -146,8 +147,12 @@ get '/contact' do
 end
 
 get '/news' do
-  posts = Post.reverse_order(:created_at).limit(5)
+  posts = Post.filter(:english => true).reverse_order(:created_at).limit(5)
   erb :news, :locals => { :posts => posts }, :layout => :school_layout
+end
+
+get '/staff' do
+  erb :staff, :layout => false
 end
 
 post '/contact_submit' do
@@ -168,5 +173,32 @@ post '/contact_submit' do
   )
   #redirect '/contact'
   erb :contact, :locals => { :status => true }, :layout => false
+end
+
+# czech versions
+
+get '/domu' do
+  erb :domu, :layout => false
+end
+
+get '/skola' do
+  erb :skola, :layout => false
+end
+
+get '/ucitele' do
+  erb :ucitele, :layout => false
+end
+
+get '/kontakt' do
+  erb :kontakt, :layout => false
+end
+
+get '/novinky' do
+  posts = Post.filter(:english => false).reverse_order(:created_at).limit(5)
+  erb :novinky, :locals => { :posts => posts }, :layout => :school_layout
+end
+
+get '/galerie' do
+  erb :gallery, :layout => false
 end
 

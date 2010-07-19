@@ -12,6 +12,7 @@ class Post < Sequel::Model
 			text :slug
 			text :tags
 			timestamp :created_at
+			boolean :english
 		end
 		create_table
 	end

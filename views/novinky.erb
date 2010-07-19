@@ -1,7 +1,9 @@
+<%# TODO work out the localization of layout %>
+
 <div id="news">
     
-	<h1 class="nospacing">News</h1>
-	<h3 class="nospacing">latest info from the school</h3>
+	<h1 class="nospacing">Novinky</h1>
+	<h3 class="nospacing">nejnovější zprávy ze školy</h3>
 
 	<% posts.each do |post| %>
 	<div class="post">
@@ -11,7 +13,7 @@
 		<div class="entry">
 			<%= post.summary_html %>
 			<% if post.more? %>
-				<a href="<%= post.url %>">Continue reading &raquo;</a>
+				<a href="<%= post.url %>">Číst dál &raquo;</a>
 			<% end %>
 		</div>
 	</div>
@@ -19,11 +21,11 @@
 	<% end %>
    
 	<div id="older_posts">
-		<a href="/past">Older posts</a>
+		<a href="/past">Starší příspěvky</a>
 	</div>
 	
 	<% if admin? %>
-		<div id="new_post"><a href="/posts/new">New post</a></div>
+		<div id="new_post"><a href="/posts/new">Nový příspěvek</a></div>
 	<% end %>
 
 </div><!-- #news -->						

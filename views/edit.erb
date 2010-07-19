@@ -11,6 +11,9 @@
 	<div class="entry">
 		<textarea name="body"><%= post.body %></textarea>
 	</div>
+	<input type="radio" name="english" value="true" checked> english<br/>
+	<input type="radio" name="english" value="false"> czech 
+	
 	<div class="edit"><input type="submit" value="Save" /> | <a href="<%= post.url %>">or go back (no changes saved)</a></div>
 </div>
 </form>
