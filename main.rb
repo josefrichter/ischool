@@ -148,7 +148,7 @@ end
 
 get '/news' do
   posts = Post.filter(:english => true).reverse_order(:created_at).limit(5)
-  erb :news, :locals => { :posts => posts }, :layout => :school_layout
+  erb :news, :locals => { :posts => posts }, :layout => false
 end
 
 get '/staff' do
@@ -195,7 +195,7 @@ end
 
 get '/novinky' do
   posts = Post.filter(:english => false).reverse_order(:created_at).limit(5)
-  erb :novinky, :locals => { :posts => posts }, :layout => :school_layout
+  erb :novinky, :locals => { :posts => posts }, :layout => false
 end
 
 get '/galerie' do

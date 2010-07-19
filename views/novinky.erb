@@ -1,32 +1,88 @@
-<%# TODO work out the localization of layout %>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/strict.dtd">
 
-<div id="news">
-    
-	<h1 class="nospacing">Novinky</h1>
-	<h3 class="nospacing">nejnovější zprávy ze školy</h3>
-
-	<% posts.each do |post| %>
-	<div class="post">
-
-		<h6><a href="<%= post.url %>"><%= post[:title] %></a><span class="meta"> - <%= post[:created_at].strftime("%d %b %Y") %></span></h6>
-
-		<div class="entry">
-			<%= post.summary_html %>
-			<% if post.more? %>
-				<a href="<%= post.url %>">Číst dál &raquo;</a>
-			<% end %>
-		</div>
-	</div>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>International School Olomouc - Junior School</title>
+		
+		<link rel="stylesheet" href="/css/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/css/custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		
+		<script type="text/javascript" src="http://use.typekit.com/fht3iwq.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		
+	</head>
 	
-	<% end %>
-   
-	<div id="older_posts">
-		<a href="/past">Starší příspěvky</a>
-	</div>
-	
-	<% if admin? %>
-		<div id="new_post"><a href="/posts/new">Nový příspěvek</a></div>
-	<% end %>
+	<body>
+	                
+		<div id="wrapper">
+			
+			<div id="language">
+				<a href="/news">&raquo; english</a>
+			</div><!-- #language -->
+			
+			<div id="header">
+				<img id="logo" src="/images/logo.png" width="150" height="58" alt="Logo">
+			</div><!-- #header -->
+			
+			<hr />
+			 
+			<div id="navigation">
+				<ul>
+					<li><a href="/domu">domů</a></li>
+					<li><a href="skolka">školka</a></li>
+					<li><a href="skola">škola</a></li>
+					<li><a href="ucitele">učitelé</a></li>
+					<li><a href="kontakt">kontakt</a></li>
+					<li><a class="active" href="novinky">novinky</a></li>
+					<li><a href="galerie">galerie</a></li>
+				</ul>
+			</div><!-- #navigation -->
+			
+			<hr />
+			
+			<div id="body">
+				
+				<div id="news">
 
-</div><!-- #news -->						
+					<h1 class="nospacing">Novinky</h1>
+					<h3 class="nospacing">nejnovější zprávy ze školy</h3>
+
+					<% posts.each do |post| %>
+					<div class="post">
+
+						<h6><a href="<%= post.url %>"><%= post[:title] %></a><span class="meta"> - <%= post[:created_at].strftime("%d %b %Y") %></span></h6>
+
+						<div class="entry">
+							<%= post.summary_html %>
+							<% if post.more? %>
+								<a href="<%= post.url %>">Číst dál &raquo;</a>
+							<% end %>
+						</div>
+					</div>
+
+					<% end %>
+
+					<div id="older_posts">
+						<a href="/past">Starší příspěvky</a>
+					</div>
+
+					<% if admin? %>
+						<div id="new_post"><a href="/posts/new">Nový příspěvek</a></div>
+					<% end %>
+
+				</div><!-- #news -->					
+				
+			</div><!-- #body -->
+			
+		</div><!-- #wrapper -->
+		
+	</body>
+	
+</html>
+
+
+
+ 					
 				
