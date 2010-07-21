@@ -134,6 +134,10 @@ get '/' do
   erb :index, :layout => false
 end
 
+get '/preschool' do
+  erb :preschool, :layout => false
+end
+
 get '/junior-school' do
   erb :junior_school, :layout => false
 end
@@ -179,6 +183,10 @@ end
 
 get '/domu' do
   erb :domu, :layout => false
+end
+
+get '/skolka' do
+  erb :skolka, :layout => false
 end
 
 get '/skola' do
