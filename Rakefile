@@ -39,7 +39,7 @@ end
 
 task :environment do
 	require 'sequel'
-	DB = Sequel.connect('sqlite://blog.db')
+	DB = Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://blog.db')
 	$LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
 	require 'post'
 end
