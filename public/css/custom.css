@@ -78,9 +78,9 @@ hr {
 }
 
 
-/* --- BANNER --- */
+/* --- toprow --- */
 
-.banner {
+.toprow {
 	height:270px;
 	margin-bottom:80px;
 	xborder:1px solid green;
@@ -93,7 +93,7 @@ hr {
 }
 
 .homepage {
-	background: url('../images/banner_bg.png') no-repeat 45px left;
+	background: url('../images/toprow_bg.png') no-repeat 45px left;
 }
 
 #preschool_meta {
