@@ -57,6 +57,12 @@
 							<a href="/news">&laquo; back to all news</a>
 							<% if admin? %>
 								 - <a href="<%= post.url %>edit">edit this post</a>
+								<form method="post" action="/delete">
+								  <input type="hidden" name="_method" value="delete" />
+									<input type="hidden" name="slug" value="<%= post[:slug] %>" />
+								  <div><button onclick="return confirm('Are you sure?');" type="submit">delete this post</button></div>
+								</form>
+								
 							<% end %>
 						</div>
 

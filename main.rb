@@ -86,12 +86,22 @@ get '/past/tags/:tag' do
 end
 
 get '/feed' do
-	@posts = Post.reverse_order(:created_at).limit(20)
+	@posts = Post.filter(:english => true).reverse_order(:created_at).limit(20)
 	content_type 'application/atom+xml', :charset => 'utf-8'
 	builder :feed
 end
 
 get '/rss' do
+	redirect '/feed', 301
+end
+
+get '/feedcz' do
+	@posts = Post.filter(:english => false).reverse_order(:created_at).limit(20)
+	content_type 'application/atom+xml', :charset => 'utf-8'
+	builder :feed
+end
+
+get '/rsscz' do
 	redirect '/feed', 301
 end
 
@@ -136,6 +146,19 @@ post '/past/:year/:month/:day/:slug/' do #update
 	post.english = params[:english]
 	post.save
 	redirect post.url
+end
+
+delete '/delete' do #delete
+	auth
+	post = Post.filter(:slug => params[:slug]).first
+	halt [ 404, "Page not found" ] unless post
+	english = post.english
+	post.delete
+	if english
+	  redirect '/news'
+  else
+    redirect '/novinky'
+  end
 end
 
 # skolka custom pages

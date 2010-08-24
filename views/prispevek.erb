@@ -57,6 +57,11 @@
 							<a href="/novinky">&laquo; zpět na všechny novinky</a>
 							<% if admin? %>
 								 - <a href="<%= post.url %>edit">upravit tento příspěvek</a>
+								<form method="post" action="/delete">
+								  <input type="hidden" name="_method" value="delete" />
+									<input type="hidden" name="slug" value="<%= post[:slug] %>" />
+								  <div><button onclick="return confirm('Opravdu smazat?');" type="submit">smazat tento příspěvek</button></div>
+								</form>
 							<% end %>
 						</div>
 
