@@ -1,18 +1,75 @@
-<div id="news">
-	<div class="post">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/strict.dtd">
 
-		<h6><%= post[:title] %><span class="meta"> - <%= post[:created_at].strftime("%d %b %Y") %></span></h6>
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<title>International School Olomouc - <%= post[:title] %></title>
+		
+		<link rel="stylesheet" href="/css/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/css/custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		
+		<script type="text/javascript" src="http://use.typekit.com/fht3iwq.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		
+	</head>
+	
+	<body>
+	                
+		<div id="wrapper">
+			
+			<div id="language">
+				<a href="/novinky">&raquo; česky</a>
+			</div><!-- #language -->
+			
+			<div id="header">
+				<img id="logo" src="/images/logo.png" width="150" height="58" alt="Logo">
+			</div><!-- #header -->
+			
+			<hr />
+			 
+			<div id="navigation">
+				<ul>
+					<li><a href="/">homepage</a></li>
+					<li><a href="/preschool">preschool</a></li>
+					<li><a href="/junior-school">junior school</a></li>
+					<li><a href="/staff">staff</a></li>
+					<li><a href="/contact">contact</a></li>
+					<li><a class="active" href="/news">news</a></li>
+					<li><a href="/gallery">gallery</a></li>
+				</ul>
+			</div><!-- #navigation -->
+			
+			<hr />
+			
+			<div id="body">
+				
+				<div id="news">
+					<div class="post">
 
-		<div class="entry">
-			<%= post.body_html %>
-		</div>
+						<h6><%= post[:title] %><span class="meta"> - <%= post[:created_at].strftime("%d %b %Y") %></span></h6>
+
+						<div class="entry">
+							<%= post.body_html %>
+						</div>
+
+						<div class="controls">
+							<a href="/news">&laquo; back to all news</a>
+							<% if admin? %>
+								 - <a href="<%= post.url %>edit">edit this post</a>
+							<% end %>
+						</div>
+
+					</div>
+				</div>					
+				
+			</div><!-- #body -->
+			
+		</div><!-- #wrapper -->
 		
-		<div class="controls">
-			<a href="/news">&laquo; back to all news</a>
-			<% if admin? %>
-				 - <a href="<%= post.url %>edit">edit this post</a>
-			<% end %>
-		</div>
-		
-	</div>
-</div>
+	</body>
+	
+</html>
+
+
+

@@ -93,7 +93,8 @@ hr {
 }
 
 .homepage {
-	background: url('../images/toprow_bg.png') no-repeat 45px left;
+	/*background: url('../images/toprow_bg.png') no-repeat 45px left;*/
+	background: url('../images/toprow_bg.png') no-repeat scroll 0 45px;
 }
 
 #preschool_meta {
@@ -260,7 +261,7 @@ table.archive td {
 
 #edit_post textarea {
 	width:60em;
-	height:10em;
+	height:60em;
 }
 
 /* --- STAFF ---*/

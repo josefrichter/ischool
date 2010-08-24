@@ -55,7 +55,11 @@ get '/past/:year/:month/:day/:slug/' do
 	post = Post.filter(:slug => params[:slug]).first
 	halt [ 404, "Page not found" ] unless post
 	@title = post.title
-	erb :post, :locals => { :post => post }, :layout => :school_layout
+	if post.english == true
+	  erb :post, :locals => { :post => post }, :layout => false
+  else
+    erb :prispevek, :locals => { :post => post }, :layout => false
+  end
 end
 
 get '/past/:year/:month/:day/:slug' do
@@ -63,9 +67,15 @@ get '/past/:year/:month/:day/:slug' do
 end
 
 get '/past' do
-	posts = Post.reverse_order(:created_at)
+	posts = Post.filter(:english => true).reverse_order(:created_at)
 	@title = "Archive"
-	erb :archive, :locals => { :posts => posts }, :layout => :school_layout
+	erb :archive, :locals => { :posts => posts }, :layout => false
+end
+
+get '/archiv' do
+  posts = Post.filter(:english => false).reverse_order(:created_at)
+	@title = "Archiv"
+	erb :archiv, :locals => { :posts => posts }, :layout => false
 end
 
 get '/past/tags/:tag' do
@@ -157,6 +167,10 @@ end
 
 get '/staff' do
   erb :staff, :layout => false
+end
+
+get '/staff2' do
+  erb :staff2, :layout => false
 end
 
 post '/contact_submit' do
