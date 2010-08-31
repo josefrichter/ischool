@@ -27,3 +27,10 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
 end
+
+namespace :tail do
+  desc "Tail production.log"
+  task :default do
+    run "tail -n 500 /home/deployer/app/current/log/production.log"
+  end
+end
