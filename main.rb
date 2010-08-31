@@ -198,18 +198,18 @@ end
 
 post '/contact_submit' do
   Pony.mail(
-    :to => 'pepa007@seznam.cz', 
+    :to => 'josef.richter@me.com', 
     :from => params[:contact], 
-    :subject => 'Email from web', 
+    :subject => 'Email from ischool.cz web', 
     :body => params[:body],
     :via => :smtp,
     :via_options => {
       :address        => "smtp.sendgrid.net",
       :port           => "25",
       :authentication => :plain,
-      :user_name      => ENV['SENDGRID_USERNAME'],
-      :password       => ENV['SENDGRID_PASSWORD'],
-      :domain         => ENV['SENDGRID_DOMAIN']  
+      :user_name      => "josef.richter@me.com",
+      :password       => "tyom-ry-ri",
+      :domain         => "ischool.cz"  
     }
   )
   #redirect '/contact'

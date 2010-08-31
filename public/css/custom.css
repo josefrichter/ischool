@@ -119,6 +119,10 @@ hr {
 
 /* --- BODY ---*/
 
+#body {
+	height:1160px;
+}
+
 .nospacing {
 	margin-top:0 !important;
 	padding-top:0 !important;
@@ -161,6 +165,14 @@ input#contact {
 textarea {
 	padding:2px 5px;
 	border:1px solid #ccc;
+}
+
+#spacer_skolka_leftcol {
+	margin-top:4em;
+}
+
+#spacer_skolka_rightcol {
+	margin-top:24em;
 }
 
 /* --- PHOTOS --- */
@@ -277,4 +289,10 @@ table.archive td {
 .teacher_profile .contact img {
 	float:left;
 	margin-right:20px;
+}
+
+/*--- FOOTER ---*/
+#footer {
+	color:#aaa;
+	padding-bottom:1em;
 }
