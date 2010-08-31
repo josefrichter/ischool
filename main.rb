@@ -20,6 +20,10 @@ configure do
 		:admin_cookie_value => '913ace5851d6d976',
 		:disqus_shortname => nil
 	)
+	
+	set :environment, :production
+  set :env, :production
+  enable :logging, :dump_errors 
 end
 
 error do
