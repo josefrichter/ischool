@@ -211,8 +211,8 @@ post '/contact_submit' do
       :address        => "smtp.sendgrid.net",
       :port           => "25",
       :authentication => :plain,
-      :user_name      => "josef.richter@me.com",
-      :password       => "tyom-ry-ri",
+      :user_name      => "app229083@heroku.com",
+      :password       => "9d94ea7910e51706d0",
       :domain         => "ischool.cz"  
     }
   )
