@@ -171,8 +171,8 @@ get '/preschool' do
   erb :preschool, :layout => false
 end
 
-get '/junior-school' do
-  erb :junior_school, :layout => false
+get '/primary-school' do
+  erb :primary_school, :layout => false
 end
 
 get '/gallery' do
@@ -234,6 +234,10 @@ get '/ucitele' do
   erb :ucitele, :layout => false
 end
 
+get '/ucitele2' do
+  erb :ucitele2, :layout => false
+end
+
 get '/kontakt' do
   erb :kontakt, :layout => false
 end
@@ -244,6 +248,6 @@ get '/novinky' do
 end
 
 get '/galerie' do
-  erb :gallery, :layout => false
+  erb :galerie, :layout => false
 end
 

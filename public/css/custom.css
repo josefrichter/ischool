@@ -112,6 +112,10 @@ hr {
 	margin:130px 0 0 0;
 }
 
+#preschool_meta h3, #juniorschool_meta h3 {
+	line-height:1.1em;
+}
+
 
 /* --- BODY ---*/
 
@@ -144,7 +148,7 @@ p + h6 {
 }
 
 #preschool_spacer {
-	margin-top: 18em;
+	margin-top: 16em;
 }
 
 input#contact {
