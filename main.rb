@@ -223,7 +223,7 @@ post '/contact_submit' do
       :port           => "25",
       :authentication => :plain,
       :user_name      => "app229083@heroku.com",
-      #:password       => "9d94ea7910e51706d0",
+      :password       => "9d94ea7910e51706d0",
       :domain         => "ischool.cz"  
     }
   )
