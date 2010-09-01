@@ -3,8 +3,15 @@ require 'sinatra'
 #require 'ruby-debug'
 require 'pony' # for sending emails
 
+require 'sinatra/base'
+require 'hoptoad_notifier' #error notification
+
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/vendor/sequel'
 require 'sequel'
+
+HoptoadNotifier.configure do |config|
+  config.api_key = '393def238f9ec5a38fb0d80087423988'
+end
 
 configure do
 	Sequel.connect(ENV['DATABASE_URL'] || 'sqlite://blog.db')
@@ -14,7 +21,7 @@ configure do
 		:title => 'CBIS news',
 		:author => 'CBIS',
 		#:url_base => 'http://localhost:4567/',
-		:url_base => 'http://ischool.heroku.com/',
+		:url_base => 'http://ischool.test.railshosting.cz/',
 		:admin_password => 'cbis2010',
 		:admin_cookie_key => 'cbis_admin',
 		:admin_cookie_value => '913ace5851d6d976',
@@ -24,14 +31,18 @@ configure do
 	set :environment, :production
   set :env, :production
   enable :logging, :dump_errors 
+  
+  use HoptoadNotifier::Rack
+  enable :raise_errors
+  
 end
 
-error do
-	e = request.env['sinatra.error']
-	puts e.to_s
-	puts e.backtrace.join("\n")
-	"Application error"
-end
+#error do
+#	e = request.env['sinatra.error']
+#	puts e.to_s
+#	puts e.backtrace.join("\n")
+#	"Application error"
+#end
 
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
 require 'post'
@@ -212,7 +223,7 @@ post '/contact_submit' do
       :port           => "25",
       :authentication => :plain,
       :user_name      => "app229083@heroku.com",
-      :password       => "9d94ea7910e51706d0",
+      #:password       => "9d94ea7910e51706d0",
       :domain         => "ischool.cz"  
     }
   )
