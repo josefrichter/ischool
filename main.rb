@@ -37,12 +37,12 @@ configure do
   
 end
 
-#error do
-#	e = request.env['sinatra.error']
-#	puts e.to_s
-#	puts e.backtrace.join("\n")
-#	"Application error"
-#end
+error do
+	e = request.env['sinatra.error']
+	puts e.to_s
+	puts e.backtrace.join("\n")
+	"Application error, please hit 'back' button. Errors are automatically reported, we will try to resolve them asap. Thank you."
+end
 
 $LOAD_PATH.unshift(File.dirname(__FILE__) + '/lib')
 require 'post'
