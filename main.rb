@@ -213,7 +213,7 @@ end
 
 post '/contact_submit' do
   Pony.mail(
-    :to => 'josef.richter@me.com', 
+    :to => 'info@ischool.cz', 
     :from => params[:contact], 
     :subject => 'Email from ischool.cz web', 
     :body => params[:body],
