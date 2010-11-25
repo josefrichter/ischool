@@ -16,7 +16,7 @@ $(document).ready(function() {
 			    $.each(data.photoset.photo, function(j,item){
 			      var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_m.jpg';
 						$("#wrapper_"+i).append("<div class=\"polaroid\"><img src=\""+photoURL+"\" alt=\"Picture\" /><p>&nbsp;"+item.title+"&nbsp;</p></div>");
-			      if ( j == 10 ) return false; // get just 6 photos
+			      if ( j == 6 ) return false; // get just 6 photos
 			    }); // end each
 					
 					polaroidize();

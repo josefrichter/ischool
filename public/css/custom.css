@@ -180,7 +180,7 @@ textarea {
 .pics_wrapper {
 	width:360px;
 	margin-right:50px;
-	height:340px;
+	height:320px;
 	xborder:1px solid red;
 	position:relative;
 	float:left;
@@ -235,6 +235,12 @@ textarea {
 	color:#666; 
 	margin: 3px 0 7px 0;
 	padding:0; 
+}
+
+.more_photos {
+	position:relative;
+	top:1000px;
+	xleft:20px;
 }
 
 /* --- NEWS --- */
