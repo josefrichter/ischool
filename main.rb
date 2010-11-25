@@ -190,9 +190,9 @@ get '/primary-school' do
   erb :primary_school, :layout => false
 end
 
-#get '/gallery' do
-#  erb :gallery, :layout => false
-#end
+get '/gallery' do
+  erb :gallery, :layout => false
+end
 
 get '/contact' do
   erb :contact, :layout => false
