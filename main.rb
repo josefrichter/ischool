@@ -262,7 +262,7 @@ get '/novinky' do
   erb :novinky, :locals => { :posts => posts }, :layout => false
 end
 
-#get '/galerie' do
-#  erb :galerie, :layout => false
-#end
+get '/galerie' do
+  erb :galerie, :layout => false
+end
 
