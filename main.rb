@@ -266,3 +266,6 @@ get '/galerie' do
   erb :galerie, :layout => false
 end
 
+get '/rozsireni-skolky' do
+  erb :rozsireni_ms, :layout => false
+end
