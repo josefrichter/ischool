@@ -286,6 +286,11 @@ table.archive td {
 	height:60em;
 }
 
+div.images {
+	float:right;
+	margin-top:30px;
+}
+
 /* --- STAFF ---*/
 
 .teacher_profile {

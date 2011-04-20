@@ -1,138 +1,78 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
-"http://www.w3.org/TR/html4/strict.dtd">
 
-<html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<meta name="google-site-verification" content="F5NX7TfgTW0Lk2ez73JnDnYky6FOiV2UfnH64n83vTo" />
-		
-		<title>International School Olomouc - homepage</title>
-		
-		<link rel="stylesheet" href="css/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
-		<link rel="stylesheet" href="css/custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
-		
-		<script type="text/javascript" src="http://use.typekit.com/fht3iwq.js"></script>
-		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<link type="text/css" href="css/cupertino/jquery-ui-1.8.2.custom.css" rel="stylesheet" />	
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
+<script type="text/javascript" src="js/polaroid.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 
-		<link type="text/css" href="css/cupertino/jquery-ui-1.8.2.custom.css" rel="stylesheet" />	
-		<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-		<script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script>
-		<script type="text/javascript" src="js/polaroid.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
-		<%= erb(:analytics, :layout => false) %>
-	</head>
+<div class="toprow homepage">
 	
-	<body>
-	                
-		<div id="wrapper">
-			
-			<div id="language">
-				<a href="/domu">&raquo; česky</a>
-			</div><!-- #language -->
-			
-			<div id="header">
-				<a href="/"><img id="logo" src="images/logo.png" width="150" height="58" alt="Logo"></a>
-			</div><!-- #header -->
-			
-			
-			
-			<hr />
-			 
-			<div id="navigation">
-				<ul>
-					<li><a class="active" href="/">homepage</a></li>
-					<li><a href="preschool">preschool</a></li>
-					<li><a href="primary-school">primary school</a></li>
-					<li><a href="staff">staff</a></li>
-					<li><a href="contact">contact</a></li>
-					<li><a href="news">news</a></li>
-					<li><a href="gallery">gallery</a></li>
-				</ul>
-			</div><!-- #navigation -->
-			
-			<hr />
-			
-			<div id="body">
-				
-				<div class="toprow homepage">
-					
-					<div class="column">
-						<h3 class="nospacing">School can be</h3>
-						<h1 class="nospacing">fun &amp; useful</h1>
-						<h3 class="nospacing">at the same time</h3>
-						<h4><br/>your children will get internationally recognized education taught in English</h4>
-					</div><!-- .column -->
-					
-					<div class="column">
-						
-						<div id="preschool_meta">
-							<h3>Preschool<br/>&nbsp;</h3>
-							<p>for children<br/>
-							aged 3 to 6</p><br/>
-							<a href="/preschool">more info&hellip;</a>
-						</div><!-- #preschool_meta -->
-						
-						<div id="juniorschool_meta">
-							<h3>Primary<br/>school</h3>
-							<p>for children<br/>
-							aged 6 to 11</p><br/>
-							<a href="primary-school">more info&hellip;</a>
-						</div><!-- #juniorschool_meta -->
-						
-					</div><!-- .column -->
-					
-				</div><!-- .toprow -->
-				
-				<div class="fold">
-					
-					<div class="column">
-						<h6>Who we are</h6>
-
-						<p>A small but growing <strong>family-like private preschool and primary school</strong> offering an international style <strong>education in English</strong> with a particular emphasis on the development of international mindedness.</p>
-
-						<p>As an international school we follow specific standards that regulate our program and determine our curriculum. The Curriculum is modelled on the <strong>International Primary Curriculum</strong> and the <strong>Cambridge Primary Programme</strong> which has its roots in the <strong>National Curriculum for England</strong>, but has been developed specifically for education internationally.</p>
-					</div><!-- .column -->
-					
-					<div class="column">
-						<h6>Some views from our school</h6>
-            
-            <!--<img id="homepage_photos" src="images/photos_temp.png" width="456" height="328" alt="Photos Temp">-->
-						<div class="pics_wrapper">
-					  </div><!-- .pics_wrapper -->
-						
-					</div><!-- .column -->
-					
-				</div><!-- .fold -->
-				
-				<div class="fold">
-					<div class="column">
-						<h6>International credentials</h6>
-
-						<p>We are a full member of the <strong>International Primary Curriculum</strong> organization and a registered <strong>Cambridge International Centre</strong> offering internationally recognized primary qualifications.</p>
-
-						<p>The primary school is approved by the <strong>Czech Ministry of Education</strong> as provider of compulsory school education in the Czech Republic.</p> 
-
-						<p>Preschool is registered in the <strong>Czech School Register</strong>.</p>
-					</div><!-- .column -->
-					
-					<div class="column">
-						<h6>&nbsp;</h6>
-						<p>
-							<img src="/images/cie_logo_280.png" width="280" height="65" alt="Cie Logo 280"><br/>
-							<img src="/images/logos_ipc.png" width="280" height="101" alt="Logos Ipc">
-						</p>	
-					</div><!-- .column -->
-					
-				</div><!-- .fold -->
-				
-			</div><!-- #body -->
-			
-			<div id="footer">
-				Website designed and developed by Josef Richter <a href="http://www.josefrichter.com">www.josefrichter.com</a>
-			</div>
-			
-		</div><!-- #wrapper -->
-		
-	</body>
+	<div class="column">
+		<h3 class="nospacing">School can be</h3>
+		<h1 class="nospacing">fun &amp; useful</h1>
+		<h3 class="nospacing">at the same time</h3>
+		<h4><br/>your children will get internationally recognized education taught in English</h4>
+	</div><!-- .column -->
 	
-</html>
+	<div class="column">
+		
+		<div id="preschool_meta">
+			<h3>Preschool<br/>&nbsp;</h3>
+			<p>for children<br/>
+			aged 3 to 6</p><br/>
+			<a href="/preschool">more info&hellip;</a>
+		</div><!-- #preschool_meta -->
+		
+		<div id="juniorschool_meta">
+			<h3>Primary<br/>school</h3>
+			<p>for children<br/>
+			aged 6 to 11</p><br/>
+			<a href="primary-school">more info&hellip;</a>
+		</div><!-- #juniorschool_meta -->
+		
+	</div><!-- .column -->
+	
+</div><!-- .toprow -->
+
+<div class="fold">
+	
+	<div class="column">
+		<h6>Who we are</h6>
+
+		<p>A small but growing <strong>family-like private preschool and primary school</strong> offering an international style <strong>education in English</strong> with a particular emphasis on the development of international mindedness.</p>
+
+		<p>As an international school we follow specific standards that regulate our program and determine our curriculum. The Curriculum is modelled on the <strong>International Primary Curriculum</strong> and the <strong>Cambridge Primary Programme</strong> which has its roots in the <strong>National Curriculum for England</strong>, but has been developed specifically for education internationally.</p>
+	</div><!-- .column -->
+	
+	<div class="column">
+		<h6>Some views from our school</h6>
+        
+        <!--<img id="homepage_photos" src="images/photos_temp.png" width="456" height="328" alt="Photos Temp">-->
+		<div class="pics_wrapper">
+	  </div><!-- .pics_wrapper -->
+		
+	</div><!-- .column -->
+	
+</div><!-- .fold -->
+
+<div class="fold">
+	<div class="column">
+		<h6>International credentials</h6>
+
+		<p>We are a full member of the <strong>International Primary Curriculum</strong> organization and a registered <strong>Cambridge International Centre</strong> offering internationally recognized primary qualifications.</p>
+
+		<p>The primary school is approved by the <strong>Czech Ministry of Education</strong> as provider of compulsory school education in the Czech Republic.</p> 
+
+		<p>Preschool is registered in the <strong>Czech School Register</strong>.</p>
+	</div><!-- .column -->
+	
+	<div class="column">
+		<h6>&nbsp;</h6>
+		<p>
+			<img src="/images/cie_logo_280.png" width="280" height="65" alt="Cie Logo 280"><br/>
+			<img src="/images/logos_ipc.png" width="280" height="101" alt="Logos Ipc">
+		</p>	
+	</div><!-- .column -->
+	
+</div><!-- .fold -->
+

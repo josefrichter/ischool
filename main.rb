@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'rubygems'
 require 'sinatra'
 #require 'ruby-debug'
@@ -179,28 +181,40 @@ end
 # skolka custom pages
 
 get '/' do
-  erb :index, :layout => false
+  title = "Homepage"
+  cz = "/domu"
+  erb :index, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
 get '/preschool' do
-  erb :preschool, :layout => false
+  title = "Preschool"
+  cz = "/skolka"
+  erb :preschool, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
-get '/primary-school' do
-  erb :primary_school, :layout => false
+get '/primary-school' do                                                    
+  title = "Primary School"
+  cz = "/skola"
+  erb :primary_school, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
 get '/gallery' do
-  erb :gallery, :layout => false
+  title = "Gallery"
+  cz = "/galerie"
+  erb :gallery, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
 get '/contact' do
-  erb :contact, :layout => false
+  title = "Contacts"
+  cz = "/kontakty"
+  erb :contact, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
 get '/news' do
   posts = Post.filter(:english => true).reverse_order(:created_at).limit(5)
-  erb :news, :locals => { :posts => posts }, :layout => false
+  title = "News"
+  cz = "/novinky"
+  erb :news, :locals => { :posts => posts, :title => title, :cz => cz }, :layout => :lay_english
 end
 
 get '/staff' do
@@ -228,7 +242,13 @@ post '/contact_submit' do
     }
   )
   #redirect '/contact'
-  erb :contact, :locals => { :status => true }, :layout => false
+  erb :contact, :locals => { :status => true, :title => "Contacts", :cz => "/kontakty" }, :layout => :lay_english
+end
+
+get '/expanding-preschool' do
+  title = "expanding preschool capacity"
+  cz = "/rozsireni-skolky"
+  erb :expanding_preschool, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
 # czech versions
