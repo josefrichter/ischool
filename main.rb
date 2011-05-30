@@ -181,7 +181,7 @@ end
 # skolka custom pages
 
 get '/' do
-  title = "Homepage"
+  title = "English preschool and school in Olomouc, Czech Republic"
   cz = "/domu"
   erb :index, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end

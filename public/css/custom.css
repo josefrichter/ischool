@@ -80,6 +80,11 @@ hr {
 
 /* --- toprow --- */
 
+.homepage h2 {
+	font-size: 1.4em;
+	color:#666;
+}
+
 .toprow {
 	height:270px;
 	margin-bottom:80px;
