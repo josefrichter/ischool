@@ -57,6 +57,11 @@ helpers do
 	def auth
 		halt [ 401, 'Not authorized' ] unless admin?
 	end
+	
+  def base_url
+    @base_url ||= "#{request.env['rack.url_scheme']}://#{request.env['HTTP_HOST']}"
+  end
+	
 end
 
 layout 'school_layout'
@@ -74,7 +79,9 @@ get '/news/:slug/' do
 	halt [ 404, "Page not found" ] unless post
 	@title = post.title
 	if post.english == true
-	  erb :post, :locals => { :post => post }, :layout => false
+	  #erb :post, :locals => { :post => post }, :layout => false
+	  cz = "/novinky"
+	  erb :post, :layout => :lay_english, :locals => {:title => @title, :cz => cz, :post => post}
   else
     erb :prispevek, :locals => { :post => post }, :layout => false
   end
@@ -149,14 +156,16 @@ post '/posts' do
 	redirect post.url
 end
 
-get '/past/:year/:month/:day/:slug/edit' do
+#get '/past/:year/:month/:day/:slug/edit' do
+get '/news/:slug/edit' do
 	auth
 	post = Post.filter(:slug => params[:slug]).first
 	halt [ 404, "Page not found" ] unless post
 	erb :edit, :locals => { :post => post, :url => post.url }, :layout => :school_layout
 end
 
-post '/past/:year/:month/:day/:slug/' do #update
+#post '/past/:year/:month/:day/:slug/' do #update
+post '/news/:slug/' do #update
 	auth
 	post = Post.filter(:slug => params[:slug]).first
 	halt [ 404, "Page not found" ] unless post

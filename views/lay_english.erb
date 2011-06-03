@@ -7,8 +7,8 @@
 		<meta name="google-site-verification" content="F5NX7TfgTW0Lk2ez73JnDnYky6FOiV2UfnH64n83vTo" />
 		<title>International School Olomouc - <%= title %></title>
 		
-		<link rel="stylesheet" href="css/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
-		<link rel="stylesheet" href="css/custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="<%= base_url %>/css/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="<%= base_url %>/css/custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		
 		<script type="text/javascript" src="http://use.typekit.com/fht3iwq.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -24,7 +24,7 @@
 			</div><!-- #language -->
 			
 			<div id="header">
-				<a href="/"><img id="logo" src="images/logo.png" width="150" height="58" alt="Logo"></a>
+				<a href="/"><img id="logo" src="<%= base_url %>/images/logo.png" width="150" height="58" alt="Logo"></a>
 			</div><!-- #header -->
 			
 			<hr />
@@ -32,13 +32,13 @@
 			<div id="navigation">
 				<ul>
 					<li><a class="<%= 'active' if request.path == '/' %>" href="/">homepage</a></li>
-					<li><a class="<%= 'active' if request.path == '/preschool' %>" href="preschool">preschool</a></li>
-					<li><a class="<%= 'active' if request.path == '/primary-school' %>" href="primary-school">primary school</a></li>
-					<li><a class="<%= 'active' if (request.path == '/staff') || (request.path == '/staff2') %>" href="staff">staff</a></li>
-					<li><a class="<%= 'active' if request.path == '/contact' %>" href="contact">contact</a></li>
-					<li><a class="<%= 'active' if request.path == '/news' %>" href="news">news</a></li>
-					<li><a class="<%= 'active' if request.path == '/expanding-preschool' %>" href="expanding-preschool">expanding preschool</a></li>
-					<li><a class="<%= 'active' if request.path == '/gallery' %>" href="gallery">gallery</a></li>
+					<li><a class="<%= 'active' if request.path == '/preschool' %>" href="/preschool">preschool</a></li>
+					<li><a class="<%= 'active' if request.path == '/primary-school' %>" href="/primary-school">primary school</a></li>
+					<li><a class="<%= 'active' if (request.path == '/staff') || (request.path == '/staff2') %>" href="/staff">staff</a></li>
+					<li><a class="<%= 'active' if request.path == '/contact' %>" href="/contact">contact</a></li>
+					<li><a class="<%= 'active' if request.path.include? '/news' %>" href="/news">news</a></li>
+					<li><a class="<%= 'active' if request.path == '/expanding-preschool' %>" href="/expanding-preschool">expanding preschool</a></li>
+					<li><a class="<%= 'active' if request.path == '/gallery' %>" href="/gallery">gallery</a></li>
 				</ul>
 			</div><!-- #navigation -->
 			

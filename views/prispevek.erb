@@ -47,7 +47,7 @@
 				<div id="news">
 					<div class="post">
 
-						<h1><%= post[:title] %><span class="meta"> - <%= post[:created_at].strftime("%d. %m. %Y") %></span></h1>
+						<h1><%= post[:title] %><span class="meta"> -&nbsp;<%= post[:created_at].strftime("%d. %m. %Y").gsub(" ", "&nbsp;") %></span></h1>
 
 						<div class="entry">
 							<%= post.body_html %>
