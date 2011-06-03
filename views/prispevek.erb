@@ -19,7 +19,7 @@
 		<div id="wrapper">
 			
 			<div id="language">
-				<a href="/staff">&raquo; English</a>
+				<a href="/news">&raquo; English</a>
 			</div><!-- #language -->
 			
 			<div id="header">
@@ -47,7 +47,7 @@
 				<div id="news">
 					<div class="post">
 
-						<h6><%= post[:title] %><span class="meta"> - <%= post[:created_at].strftime("%d. %m. %Y") %></span></h6>
+						<h1><%= post[:title] %><span class="meta"> - <%= post[:created_at].strftime("%d. %m. %Y") %></span></h1>
 
 						<div class="entry">
 							<%= post.body_html %>

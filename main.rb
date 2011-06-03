@@ -68,7 +68,8 @@ get '/news-original' do
 	erb :news_original, :locals => { :posts => posts }, :layout => false
 end
 
-get '/past/:year/:month/:day/:slug/' do
+#get '/past/:year/:month/:day/:slug/' do
+get '/news/:slug/' do
 	post = Post.filter(:slug => params[:slug]).first
 	halt [ 404, "Page not found" ] unless post
 	@title = post.title
@@ -79,8 +80,10 @@ get '/past/:year/:month/:day/:slug/' do
   end
 end
 
-get '/past/:year/:month/:day/:slug' do
-	redirect "/past/#{params[:year]}/#{params[:month]}/#{params[:day]}/#{params[:slug]}/", 301
+#get '/past/:year/:month/:day/:slug' do
+get '/news/:slug' do
+	#redirect "/past/#{params[:year]}/#{params[:month]}/#{params[:day]}/#{params[:slug]}/", 301
+	redirect "/news/#{params[:slug]}/", 301
 end
 
 get '/past' do
