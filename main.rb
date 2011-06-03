@@ -83,7 +83,8 @@ get '/news/:slug/' do
 	  cz = "/novinky"
 	  erb :post, :layout => :lay_english, :locals => {:title => @title, :cz => cz, :post => post}
   else
-    erb :prispevek, :locals => { :post => post }, :layout => false
+    en = "/news"
+    erb :prispevek, :layout => :lay_czech, :locals => {:title => @title, :en => en, :post => post}
   end
 end
 
@@ -266,38 +267,57 @@ end
 # czech versions
 
 get '/domu' do
-  erb :domu, :layout => false
+  title = "„anglická“ školka a škola v Olomouci"
+  en = "/"
+  erb :domu, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/skolka' do
-  erb :skolka, :layout => false
+  title = "školka"
+  en = "/preschool"
+  erb :skolka, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/skola' do
-  erb :skola, :layout => false
+  title = "škola"
+  en = "/primary-school"
+  erb :skola, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/ucitele' do
-  erb :ucitele, :layout => false
+  title = "učitelé"
+  en = "/staff"
+  erb :ucitele, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/ucitele2' do
-  erb :ucitele2, :layout => false
+  title = "učitelé 2"
+  en = "/staff2"
+  erb :ucitele2, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/kontakt' do
-  erb :kontakt, :layout => false
+  title = "kontakt"
+  en = "/contact"
+  erb :kontakt, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/novinky' do
   posts = Post.filter(:english => false).reverse_order(:created_at).limit(5)
-  erb :novinky, :locals => { :posts => posts }, :layout => false
+  
+  title = "novinky"
+  en = "/news"
+  erb :novinky, :layout => :lay_czech, :locals => {:title => title, :en => en, :posts => posts}
 end
 
 get '/galerie' do
-  erb :galerie, :layout => false
+  title = "galerie"
+  en = "/gallery"
+  erb :galerie, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/rozsireni-skolky' do
-  erb :rozsireni_ms, :layout => false
+  title = "rozšíření školky"
+  en = "/expanding-preschool"
+  erb :rozsireni_ms, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end

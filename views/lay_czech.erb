@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<meta name="google-site-verification" content="F5NX7TfgTW0Lk2ez73JnDnYky6FOiV2UfnH64n83vTo" />
+		<title>International School Olomouc - <%= title %></title>
+		
+		<link rel="stylesheet" href="<%= base_url %>/css/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="<%= base_url %>/css/custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		
+		<script type="text/javascript" src="http://use.typekit.com/fht3iwq.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+		<%= erb(:analytics, :layout => false) %>
+	</head>
+	
+	<body>
+	                
+		<div id="wrapper">
+			
+			<div id="language">
+				<a href="<%= en %>">&raquo; English</a>
+			</div><!-- #language -->
+			
+			<div id="header">
+				<a href="/"><img id="logo" src="<%= base_url %>/images/logo.png" width="150" height="58" alt="Logo"></a>
+			</div><!-- #header -->
+			
+			<hr />
+			 
+			<div id="navigation">
+				<ul>
+					<li><a class="<%= 'active' if request.path == '/domu' %>" href="/domu">domů</a></li>
+					<li><a class="<%= 'active' if request.path == '/skolka' %>" href="/skolka">školka</a></li>
+					<li><a class="<%= 'active' if request.path == '/skola' %>" href="/skola">škola</a></li>
+					<li><a class="<%= 'active' if request.path.include? '/ucitele' %>" href="/ucitele">učitelé</a></li>
+					<li><a class="<%= 'active' if request.path == '/kontakt' %>" href="/kontakt">kontakt</a></li>
+					<li><a class="<%= 'active' if ((request.path.include? '/novinky') || (request.path.include? '/news')) %>" href="/novinky">novinky</a></li>
+					<li><a class="<%= 'active' if request.path == '/rozsireni-skolky' %>" href="/rozsireni-skolky">rozšíření školky</a></li>
+					<li><a class="<%= 'active' if request.path == '/galerie' %>" href="/galerie">galerie</a></li>
+				</ul>
+			</div><!-- #navigation -->
+			
+			<hr />
+			
+			<div id="body">
+
+				<%= yield %>
+				
+			</div><!-- #body -->
+			<div id="footer">
+				Design a vývoj webu Josef Richter <a href="http://www.josefrichter.com">www.josefrichter.com</a>
+			</div>
+		</div><!-- #wrapper -->
+		
+	</body>
+	
+</html>
