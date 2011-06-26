@@ -195,7 +195,7 @@ end
 
 get '/' do
   title = "English preschool and school in Olomouc, Czech Republic"
-  cz = "/domu"
+  cz = "/anglicka-skola-skolka"
   erb :index, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
@@ -266,38 +266,38 @@ end
 
 # czech versions
 
-get '/domu' do
-  title = "„anglická“ školka a škola v Olomouci"
+get '/anglicka-skola-skolka' do
+  title = "anglická školka a škola Olomouc"
   en = "/"
   erb :domu, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/skolka' do
-  title = "školka"
+  title = "Školka"
   en = "/preschool"
   erb :skolka, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/skola' do
-  title = "škola"
+  title = "Základní škola"
   en = "/primary-school"
   erb :skola, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/ucitele' do
-  title = "učitelé"
+  title = "Učitelé"
   en = "/staff"
   erb :ucitele, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/ucitele2' do
-  title = "učitelé 2"
+  title = "Učitelé 2"
   en = "/staff2"
   erb :ucitele2, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/kontakt' do
-  title = "kontakt"
+  title = "Kontakt"
   en = "/contact"
   erb :kontakt, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
@@ -305,19 +305,19 @@ end
 get '/novinky' do
   posts = Post.filter(:english => false).reverse_order(:created_at).limit(5)
   
-  title = "novinky"
+  title = "Novinky"
   en = "/news"
   erb :novinky, :layout => :lay_czech, :locals => {:title => title, :en => en, :posts => posts}
 end
 
 get '/galerie' do
-  title = "galerie"
+  title = "Galerie"
   en = "/gallery"
   erb :galerie, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/rozsireni-skolky' do
-  title = "rozšíření školky"
+  title = "Rozšíření školky"
   en = "/expanding-preschool"
   erb :rozsireni_ms, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end

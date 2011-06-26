@@ -5,14 +5,14 @@
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<meta name="google-site-verification" content="F5NX7TfgTW0Lk2ez73JnDnYky6FOiV2UfnH64n83vTo" />
-		<title>International School Olomouc - <%= title %></title>
+		<title><%= title %> | International School Olomouc</title>
 		
 		<link rel="stylesheet" href="<%= base_url %>/css/base.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<link rel="stylesheet" href="<%= base_url %>/css/custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		
 		<script type="text/javascript" src="http://use.typekit.com/fht3iwq.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-		<%= erb(:analytics, :layout => false) %>
+		
 	</head>
 	
 	<body>
@@ -20,25 +20,25 @@
 		<div id="wrapper">
 			
 			<div id="language">
-				<a href="<%= en %>">&raquo; English</a>
+				<a href="<%= base_url + en %>"><img src="<%= base_url %>/images/gb.png" width="16" height="11" alt="Anglická školka a základní škola Olomouc"></a>
 			</div><!-- #language -->
 			
 			<div id="header">
-				<a href="/"><img id="logo" src="<%= base_url %>/images/logo.png" width="150" height="58" alt="Logo"></a>
+				<a href="<%= base_url %>/anglicka-skola-skolka"><img id="logo" src="<%= base_url %>/images/logo.png" width="150" height="58" alt="anglická školka Olomouc"></a>
 			</div><!-- #header -->
 			
 			<hr />
 			 
 			<div id="navigation">
 				<ul>
-					<li><a class="<%= 'active' if request.path == '/domu' %>" href="/domu">domů</a></li>
-					<li><a class="<%= 'active' if request.path == '/skolka' %>" href="/skolka">školka</a></li>
-					<li><a class="<%= 'active' if request.path == '/skola' %>" href="/skola">škola</a></li>
-					<li><a class="<%= 'active' if request.path.include? '/ucitele' %>" href="/ucitele">učitelé</a></li>
-					<li><a class="<%= 'active' if request.path == '/kontakt' %>" href="/kontakt">kontakt</a></li>
-					<li><a class="<%= 'active' if ((request.path.include? '/novinky') || (request.path.include? '/news')) %>" href="/novinky">novinky</a></li>
-					<li><a class="<%= 'active' if request.path == '/rozsireni-skolky' %>" href="/rozsireni-skolky">rozšíření školky</a></li>
-					<li><a class="<%= 'active' if request.path == '/galerie' %>" href="/galerie">galerie</a></li>
+					<li><a class="<%= 'active' if request.path == '/anglicka-skola-skolka' %>" href="<%= base_url %>/anglicka-skola-skolka">domů</a></li>
+					<li><a class="<%= 'active' if request.path == '/skolka' %>" href="<%= base_url %>/skolka">školka</a></li>
+					<li><a class="<%= 'active' if request.path == '/skola' %>" href="<%= base_url %>/skola">základní škola</a></li>
+					<li><a class="<%= 'active' if request.path.include? '/ucitele' %>" href="<%= base_url %>/ucitele">učitelé</a></li>
+					<li><a class="<%= 'active' if request.path == '/kontakt' %>" href="<%= base_url %>/kontakt">kontakt</a></li>
+					<li><a class="<%= 'active' if ((request.path.include? '/novinky') || (request.path.include? '/news')) %>" href="<%= base_url %>/novinky">novinky</a></li>
+					<li><a class="<%= 'active' if request.path == '/rozsireni-skolky' %>" href="<%= base_url %>/rozsireni-skolky">rozšíření školky</a></li>
+					<li><a class="<%= 'active' if request.path == '/galerie' %>" href="<%= base_url %>/galerie">galerie</a></li>
 				</ul>
 			</div><!-- #navigation -->
 			
@@ -50,10 +50,10 @@
 				
 			</div><!-- #body -->
 			<div id="footer">
-				Design a vývoj webu Josef Richter <a href="http://www.josefrichter.com">www.josefrichter.com</a>
+				<a href="http://www.josefrichter.com">Design a vývoj webu Josef Richter www.josefrichter.com</a>
 			</div>
 		</div><!-- #wrapper -->
-		
+		<%= erb(:analytics, :layout => false) %>
 	</body>
 	
 </html>

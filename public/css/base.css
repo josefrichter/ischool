@@ -158,7 +158,7 @@ blockquote p:before, blockquote p:after, q:before, q:after {content: '';}
 
 /* These should be self explanatory
  */
-th, strong, dt, b {
+th, strong, dt, b, span.strong {
   font-weight: normal;
 	color:#DF1419;
 }
