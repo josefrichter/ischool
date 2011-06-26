@@ -266,6 +266,10 @@ end
 
 # czech versions
 
+get '/domu' do
+  redirect "/anglicka-skola-skolka", 301
+end
+
 get '/anglicka-skola-skolka' do
   title = "anglická školka a škola Olomouc"
   en = "/"
