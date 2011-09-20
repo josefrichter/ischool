@@ -39,7 +39,9 @@
 
 		<p>We are a small but growing <span class="strong">family-like private preschool and primary school</span> offering an international style <span class="strong">education in English</span> with a particular emphasis on the development of international mindedness.</p>
 
-		<p>As an international school we follow specific standards that regulate our program and determine our curriculum. The Curriculum is modelled on the <span class="strong">International Primary Curriculum</span> and the <span class="strong">Cambridge Primary Programme</span> which has its roots in the <span class="strong">National Curriculum for England</span>, but has been developed specifically for education internationally.</p>
+		<p>As an international school we follow specific standards that regulate our program and determine our curriculum. We are a full member of the <span class="strong">International Primary Curriculum</span> organization and a registered <span class="strong">Cambridge International Centre</span> offering internationally recognized primary qualifications.</p>
+
+		<p>The primary school is approved by the <span class="strong">Czech Ministry of Education</span> as provider of compulsory school education in the Czech Republic. Preschool is registered in the <span class="strong">Czech School Register</span>.</p>
 	</div><!-- .column -->
 	
 	<div class="column">
@@ -55,16 +57,6 @@
 
 <div class="fold">
 	<div class="column">
-		<h6>International credentials</h6>
-
-		<p>We are a full member of the <span class="strong">International Primary Curriculum</span> organization and a registered <span class="strong">Cambridge International Centre</span> offering internationally recognized primary qualifications.</p>
-
-		<p>The primary school is approved by the <span class="strong">Czech Ministry of Education</span> as provider of compulsory school education in the Czech Republic.</p> 
-
-		<p>Preschool is registered in the <span class="strong">Czech School Register</span>.</p>
-	</div><!-- .column -->
-	
-	<div class="column">
 		<h6>&nbsp;</h6>
 		<p>
 			<img src="/images/cie_logo_280.png" width="280" height="65" alt="Cie Logo 280"><br/>
@@ -72,5 +64,19 @@
 		</p>	
 	</div><!-- .column -->
 	
+	<div class="column">
+		<h6>Latest news</h6>
+
+		<table class="archive">
+		<% posts.each do |post| %>
+			<tr>
+				<td><%= post.created_at.strftime("%d&nbsp;%b&nbsp;%Y") %></td>
+				<td><a href="<%= post.url %>"><%= post.title %></a></td>
+			</tr>
+		<% end %>
+			<tr><td></td><td><a href="/news">Previous news</a></td></tr>
+		</table>
+		
+	</div><!-- .column -->
 </div><!-- .fold -->
 

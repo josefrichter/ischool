@@ -196,7 +196,8 @@ end
 get '/' do
   title = "English preschool and school in Olomouc, Czech Republic"
   cz = "/anglicka-skola-skolka"
-  erb :index, :layout => :lay_english, :locals => {:title => title, :cz => cz}
+  posts = Post.filter(:english => true).reverse_order(:created_at).limit(5)
+  erb :index, :layout => :lay_english, :locals => {:title => title, :cz => cz, :posts => posts}
 end
 
 get '/preschool' do
@@ -273,7 +274,8 @@ end
 get '/anglicka-skola-skolka' do
   title = "anglická školka a škola Olomouc"
   en = "/"
-  erb :domu, :layout => :lay_czech, :locals => {:title => title, :en => en}
+  posts = Post.filter(:english => false).reverse_order(:created_at)
+  erb :domu, :layout => :lay_czech, :locals => {:title => title, :en => en, :posts => posts}
 end
 
 get '/skolka' do

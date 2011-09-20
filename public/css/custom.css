@@ -296,6 +296,10 @@ div.images {
 	margin-top:30px;
 }
 
+.archive td {
+	vertical-align:top;
+}                    
+
 /* --- STAFF ---*/
 
 .teacher_profile {

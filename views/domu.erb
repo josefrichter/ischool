@@ -38,7 +38,9 @@
 
 						<p>Malá rozvíjející se soukromá <strong>mateřská školka a základní škola</strong> rodinného typu se sídlem v Olomouci, která nabízí mezinárodní vzdělávací program <strong>v&nbsp;anglickém jazyce</strong> zaměřený na <span class="strong">rozvoj mezinárodního povědomí</span>.</p>
 						
-						<p>Jako mezinárodní škola dodržujeme specifické standardy, které regulují vzdělávací program školy a&nbsp;určují jeho obsah. Školní vzdělávací program vychází z&nbsp;programu <span class="strong">International Primary Curriculum</span> a&nbsp;<span class="strong">programu Cambridge Primary</span>, který má své kořeny v&nbsp;<span class="strong">Národním vzdělávacím programu Anglie</span>, a&nbsp;který byl <span class="strong">specificky upraven</span> pro podmínky vzdělávání v mezinárodním kontextu.</p>
+						<p>Jako mezinárodní škola dodržujeme specifické standardy, které regulují vzdělávací program školy a&nbsp;určují jeho obsah. Jsme členem organizace <span class="strong">International Primary Curriculum</span> a registrovaným <span class="strong">Cambridge International Centre</span> zaštiťující certifikované a mezinárodně uznávané výstupy vzdělání na prvním stupni základní školy.</p> 
+						
+						<p>Základní škola provozuje svou činnost na základě <span class="strong">povolení MŠMT</span> o plnění povinné školní docházky v České republice. Mateřská škola je <span class="strong">zapsána v rejstříku škol</span> a školských zařízení.</p>
 
 					</div><!-- .column -->
 					
@@ -55,15 +57,6 @@
 				
 				<div class="fold">
 					<div class="column">
-						<h6>Mezinárodní kredit</h6>
-						
-						<p>Jsme členem organizace <span class="strong">International Primary Curriculum</span> a registrovaným <span class="strong">Cambridge International Centre</span> zaštiťující certifikované a mezinárodně uznávané výstupy vzdělání na prvním stupni základní školy.</p> 
-						
-						<p>Základní škola provozuje svou činnost na základě <span class="strong">povolení MŠMT</span> o plnění povinné školní docházky v České republice. Mateřská škola je <span class="strong">zapsána v rejstříku škol</span> a školských zařízení.</p>
-
-					</div><!-- .column -->
-					
-					<div class="column">
 						<h6>&nbsp;</h6>
 						<!-- <p><img src="/images/logos_credentials.png" width="280" height="172" alt="Logos Credentials"></p> -->
 						<p>
@@ -71,6 +64,18 @@
 							<img src="/images/logos_ipc.png" width="280" height="101" alt="Logos Ipc">
 						</p>	
 					</div><!-- .column -->
-					
+					<div class="column">
+						<h6>Poslední novinky</h6>
+						<table class="archive">
+						<% posts.each do |post| %>
+							<tr>
+								<td><%= post.created_at.strftime("%d&nbsp;%b&nbsp;%Y") %></td>
+								<td><a href="<%= post.url %>"><%= post.title %></a></td>
+							</tr>
+						<% end %>
+							<tr><td></td><td><a href="/novinky">Předchozí novinky</a></td></tr>
+						</table>
+
+					</div><!-- .column -->
 				</div><!-- .fold -->
 				
