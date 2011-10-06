@@ -327,3 +327,21 @@ get '/rozsireni-skolky' do
   en = "/expanding-preschool"
   erb :rozsireni_ms, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
+
+#newsletter
+
+get '/newsletter/st-venceslaus-term' do 
+  erb :venceslaus, :layout => :'../lay_english', :locals => {:title => "St. Wenseslaus Term", :cz => "/"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/new-staff' do 
+  erb :newstaff, :layout => :'../lay_english', :locals => {:title => "New Staff", :cz => "/"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/circus-came-to-town' do 
+  erb :circus, :layout => :'../lay_english', :locals => {:title => "Circus came to town", :cz => "/"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/pips-and-aspects-assessments' do 
+  erb :pips, :layout => :'../lay_english', :locals => {:title => "PIPS & ASPECTS Assessments", :cz => "/"}, :views => settings.root+"/views/newsletter"
+end
