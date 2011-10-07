@@ -331,17 +331,35 @@ end
 #newsletter
 
 get '/newsletter/st-venceslaus-term' do 
-  erb :venceslaus, :layout => :'../lay_english', :locals => {:title => "St. Wenseslaus Term", :cz => "/"}, :views => settings.root+"/views/newsletter"
+  erb :venceslaus, :layout => :'../lay_english', :locals => {:title => "St. Wenseslaus Term", :cz => "/newsletter/pololeti-svateho-vaclava"}, :views => settings.root+"/views/newsletter"
 end
 
 get '/newsletter/new-staff' do 
-  erb :newstaff, :layout => :'../lay_english', :locals => {:title => "New Staff", :cz => "/"}, :views => settings.root+"/views/newsletter"
+  erb :newstaff, :layout => :'../lay_english', :locals => {:title => "New Staff", :cz => "/newsletter/personalni-zmeny"}, :views => settings.root+"/views/newsletter"
 end
 
 get '/newsletter/circus-came-to-town' do 
-  erb :circus, :layout => :'../lay_english', :locals => {:title => "Circus came to town", :cz => "/"}, :views => settings.root+"/views/newsletter"
+  erb :circus, :layout => :'../lay_english', :locals => {:title => "Circus came to town", :cz => "/newsletter/prijel-cirkus"}, :views => settings.root+"/views/newsletter"
 end
 
 get '/newsletter/pips-and-aspects-assessments' do 
-  erb :pips, :layout => :'../lay_english', :locals => {:title => "PIPS & ASPECTS Assessments", :cz => "/"}, :views => settings.root+"/views/newsletter"
+  erb :pips, :layout => :'../lay_english', :locals => {:title => "PIPS & ASPECTS Assessments", :cz => "/newsletter/vstupni-diagnosticke-testy"}, :views => settings.root+"/views/newsletter"
+end
+
+##cz
+
+get '/newsletter/pololeti-svateho-vaclava' do 
+  erb :vaclav, :layout => :'../lay_czech', :locals => {:title => "„Pololetí“ Svatého Václava", :en => "/newsletter/st-venceslaus-term"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/personalni-zmeny' do 
+  erb :personal, :layout => :'../lay_czech', :locals => {:title => "Personální změny", :en => "/newsletter/new-staff"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/prijel-cirkus' do 
+  erb :cirkus, :layout => :'../lay_czech', :locals => {:title => "Přijel Cirkus…", :en => "/newsletter/circus-came-to-town"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/vstupni-diagnosticke-testy' do 
+  erb :testy, :layout => :'../lay_czech', :locals => {:title => "Vstupní diagnostické testy", :en => "/newsletter/pips-and-aspects-assessments"}, :views => settings.root+"/views/newsletter"
 end
