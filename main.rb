@@ -225,7 +225,7 @@ get '/contact' do
 end
 
 get '/news' do
-  posts = Post.filter(:english => true).reverse_order(:created_at).limit(5)
+  posts = Post.filter(:english => true).reverse_order(:created_at).limit(4)
   title = "News"
   cz = "/novinky"
   erb :news, :locals => { :posts => posts, :title => title, :cz => cz }, :layout => :lay_english
@@ -309,7 +309,7 @@ get '/kontakt' do
 end
 
 get '/novinky' do
-  posts = Post.filter(:english => false).reverse_order(:created_at).limit(5)
+  posts = Post.filter(:english => false).reverse_order(:created_at).limit(4)
   
   title = "Novinky"
   en = "/news"
