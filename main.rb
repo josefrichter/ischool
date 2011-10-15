@@ -346,6 +346,10 @@ get '/newsletter/pips-and-aspects-assessments' do
   erb :pips, :layout => :'../lay_english', :locals => {:title => "PIPS & ASPECTS Assessments", :cz => "/newsletter/vstupni-diagnosticke-testy"}, :views => settings.root+"/views/newsletter"
 end
 
+get '/newsletter/new-preschool-building' do 
+  erb :newbuilding, :layout => :'../lay_english', :locals => {:title => "New Preschool Building", :cz => "/newsletter/nova-budova-skolky"}, :views => settings.root+"/views/newsletter"
+end
+
 ##cz
 
 get '/newsletter/pololeti-svateho-vaclava' do 
@@ -362,4 +366,8 @@ end
 
 get '/newsletter/vstupni-diagnosticke-testy' do 
   erb :testy, :layout => :'../lay_czech', :locals => {:title => "Vstupní diagnostické testy", :en => "/newsletter/pips-and-aspects-assessments"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/nova-budova-skolky' do 
+  erb :novabudova, :layout => :'../lay_czech', :locals => {:title => "Nová budova školky", :en => "/newsletter/new-preschool-building"}, :views => settings.root+"/views/newsletter"
 end
