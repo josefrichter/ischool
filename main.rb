@@ -350,6 +350,18 @@ get '/newsletter/new-preschool-building' do
   erb :newbuilding, :layout => :'../lay_english', :locals => {:title => "New Preschool Building", :cz => "/newsletter/nova-budova-skolky"}, :views => settings.root+"/views/newsletter"
 end
 
+get '/newsletter/survey-results' do 
+  erb :surveyresults, :layout => :'../lay_english', :locals => {:title => "Survey results", :cz => "/newsletter/vysledky-pruzkumu"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/survey-results-2' do 
+  erb :surveyresults2, :layout => :'../lay_english', :locals => {:title => "Survey results - continued", :cz => "/newsletter/vysledky-pruzkumu-2"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/survey-results-3' do 
+  erb :surveyresults3, :layout => :'../lay_english', :locals => {:title => "Survey results - continued", :cz => "/newsletter/vysledky-pruzkumu-3"}, :views => settings.root+"/views/newsletter"
+end
+
 ##cz
 
 get '/newsletter/pololeti-svateho-vaclava' do 
@@ -370,4 +382,16 @@ end
 
 get '/newsletter/nova-budova-skolky' do 
   erb :novabudova, :layout => :'../lay_czech', :locals => {:title => "Nová budova školky", :en => "/newsletter/new-preschool-building"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/vysledky-pruzkumu' do 
+  erb :vysledkypruzkumu, :layout => :'../lay_czech', :locals => {:title => "Výsledky průzkumu", :en => "/newsletter/survey-results"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/vysledky-pruzkumu-2' do 
+  erb :vysledkypruzkumu2, :layout => :'../lay_czech', :locals => {:title => "Výsledky průzkumu - pokračování", :en => "/newsletter/survey-results-2"}, :views => settings.root+"/views/newsletter"
+end
+
+get '/newsletter/vysledky-pruzkumu-3' do 
+  erb :vysledkypruzkumu3, :layout => :'../lay_czech', :locals => {:title => "Výsledky průzkumu - pokračování", :en => "/newsletter/survey-results-3"}, :views => settings.root+"/views/newsletter"
 end
