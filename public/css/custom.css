@@ -67,6 +67,7 @@ hr {
 	
 	-webkit-border-radius:8px;
 	-moz-border-radius:8px;
+	border-radius:8px;
 }
 
 #navigation ul li a:hover, #juniorschool_meta a:hover, #preschool_meta a:hover {
