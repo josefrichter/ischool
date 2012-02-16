@@ -274,7 +274,7 @@ end
 get '/anglicka-skola-skolka' do
   title = "anglická školka a škola Olomouc"
   en = "/"
-  posts = Post.filter(:english => false).reverse_order(:created_at)
+  posts = Post.filter(:english => false).reverse_order(:created_at).limit(4)
   erb :domu, :layout => :lay_czech, :locals => {:title => title, :en => en, :posts => posts}
 end
 
