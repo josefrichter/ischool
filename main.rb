@@ -220,7 +220,7 @@ end
 
 get '/contact' do
   title = "Contacts"
-  cz = "/kontakty"
+  cz = "/kontakt"
   erb :contact, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
@@ -260,7 +260,7 @@ post '/contact_submit' do
     }
   )
   #redirect '/contact'
-  erb :contact, :locals => { :status => true, :title => "Contacts", :cz => "/kontakty" }, :layout => :lay_english
+  erb :contact, :locals => { :status => true, :title => "Contacts", :cz => "/kontakt" }, :layout => :lay_english
 end
 
 get '/expanding-preschool' do
