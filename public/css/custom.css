@@ -141,6 +141,15 @@ hr {
 	xborder:1px solid green;
 }
 
+#body .threecols .column {
+	width:340px;
+	padding-right: 10px;
+}
+
+#body .threecols .smaller {
+	width:220px;
+}
+
 #homepage_photos {
 	margin-left:-30px;
 }
