@@ -93,9 +93,11 @@ hr {
 }
 
 .fold {
-	height:350px;
-	margin-bottom:60px;
+	clear: left;
+	height:360px;
+	margin-bottom:50px;
 	xborder:1px solid green;
+	overflow: hidden;
 }
 
 .homepage {
@@ -120,6 +122,10 @@ hr {
 
 #preschool_meta h3, #juniorschool_meta h3 {
 	line-height:1.1em;
+}
+
+.bio P {
+	margin-bottom: 5px;
 }
 
 
