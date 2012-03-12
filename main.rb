@@ -269,6 +269,12 @@ get '/expanding-preschool' do
   erb :expanding_preschool, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
+get '/new-preschool-building' do
+  title = "New building"
+  cz = "/nova-budova-skolky"
+  erb :newbuilding, :layout => :lay_english, :locals => {:title => title, :cz => cz}
+end
+
 # czech versions
 
 get '/domu' do
@@ -337,6 +343,14 @@ get '/rozsireni-skolky' do
   en = "/expanding-preschool"
   erb :rozsireni_ms, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
+
+get '/nova-budova-skolky' do
+  title = "Nová budova školky"
+  en = "/new-preschool-building"
+  erb :novabudova, :layout => :lay_czech, :locals => {:title => title, :en => en}
+end
+
+
 
 #newsletter
 
