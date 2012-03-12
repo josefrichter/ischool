@@ -4,7 +4,7 @@ $(document).ready(function() {
 	$.getJSON(pictures_url,
 	  function(data){
 	    $.each(data.photoset.photo, function(j,item){
-	      var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '_n.jpg';
+	      var photoURL = 'http://farm' + item.farm + '.static.flickr.com/' + item.server + '/' + item.id + '_' + item.secret + '.jpg';
 				$(".pics_wrapper").append("<div class=\"polaroid\"><img src=\""+photoURL+"\" alt=\"Picture\" /><p>&nbsp;"+item.title+"&nbsp;</p></div>");
 	      if ( j == 6000 ) return false; // get just 6 photos
 	    }); // end each
