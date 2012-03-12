@@ -236,6 +236,11 @@ textarea {
 	xborder:1px solid green;
 }
 
+.pics_wrapper.newbuilding {
+  width:75%;
+  height:650px;
+}
+
 .polaroid:hover {
 	cursor:move;
 }
