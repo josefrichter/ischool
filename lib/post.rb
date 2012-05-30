@@ -3,6 +3,9 @@ require File.dirname(__FILE__) + '/../vendor/maruku/maruku'
 $LOAD_PATH.unshift File.dirname(__FILE__) + '/../vendor/syntax'
 require 'syntax/convertors/html'
 
+require 'active_support'
+require 'active_support/inflector'
+
 class Post < Sequel::Model
 	unless table_exists?
 		set_schema do
