@@ -40,9 +40,10 @@
 					<li><a class="<%= 'active' if request.path.include? '/ucitele' %>" href="<%= base_url %>/ucitele">učitelé</a></li>
 					<li><a class="<%= 'active' if request.path == '/kontakt' %>" href="<%= base_url %>/kontakt">kontakt</a></li>
 					<li><a class="<%= 'active' if ((request.path.include? '/novinky') || (request.path.include? '/news')) %>" href="<%= base_url %>/novinky">novinky</a></li>
-					<li><a class="<%= 'active' if request.path == '/rozsireni-skolky' %>" href="<%= base_url %>/rozsireni-skolky">rozšíření školky</a></li>
+					<!--<li><a class="<%#= 'active' if request.path == '/rozsireni-skolky' %>" href="<%#= base_url %>/rozsireni-skolky">rozšíření školky</a></li>-->
 					<li><a class="<%= 'active' if request.path == '/nova-budova-skolky' %>" href="<%= base_url %>/nova-budova-skolky">nová budova školky</a></li>
 					<li><a class="<%= 'active' if request.path == '/galerie' %>" href="<%= base_url %>/galerie">galerie</a></li>
+					<li><a href="https://aplikace.skolaonline.cz">žákovská</a></li>
 				</ul>
 			</div><!-- #navigation -->
 			
