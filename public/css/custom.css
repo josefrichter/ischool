@@ -351,3 +351,41 @@ div.images {
 .nl_images {
 	margin:20px 0;
 }
+
+/* login */
+
+table#login {
+  margin:0 auto;
+  padding:0;
+}
+
+table#login td {
+  padding:5px 10px;
+  vertical-align:baseline;
+  font-size:1.3em;
+}
+
+table#login input {
+  padding:10px;
+}
+
+table#login input#login_btn {
+  color:white;
+  background:#999;
+  border:none;
+}
+
+table#login input#login_btn:hover {
+  background:#cd1921;
+  cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+

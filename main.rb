@@ -350,6 +350,18 @@ get '/nova-budova-skolky' do
   erb :novabudova, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
+get '/zakovska' do
+  title = "Přihlášení do žákovské"
+  en = "/homelog"
+  erb :zakovska, :layout => :lay_czech, :locals => {:title => title, :en => en}
+end
+
+get '/homelog' do
+  title = "Login to HomeLog"
+  cz = "/zakovska"
+  erb :homelog, :layout => :lay_english, :locals => {:title => title, :cz => cz}
+end
+
 
 
 #newsletter
