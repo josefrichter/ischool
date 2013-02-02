@@ -1,3 +1,54 @@
+/* glyphicons */
+
+@font-face {
+	font-family: 'glyphicons-halflings-custom';
+	src:url('../fonts/glyphicons-halflings-custom.eot');
+	src:url('../fonts/glyphicons-halflings-custom.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/glyphicons-halflings-custom.woff') format('woff'),
+		url('../fonts/glyphicons-halflings-custom.ttf') format('truetype'),
+		url('../fonts/glyphicons-halflings-custom.svg#glyphicons-halflings-custom') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'glyphicons-halflings-custom';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"]:before {
+*/
+.icon-outlink:before, .icon-outlink2:before, .icon-outlink3:after {
+	font-family: 'glyphicons-halflings-custom';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-outlink:before {
+	content: "\e066";
+}
+.icon-outlink2:before {
+	content: "\e065";
+}
+.icon-outlink3:after {
+	content: "\e001";
+}
+
+/* end glyphicons */
+
+
+
 body {
 	background: url('../images/background.png') no-repeat center top;
 	min-height: 1400px;
