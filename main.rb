@@ -232,15 +232,23 @@ get '/news' do
 end
 
 get '/staff' do
-  erb :staff, :layout => false
+  title = "Staff"
+  cz = "/ucitele"
+  erb :staff, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
 get '/staff2' do
-  erb :staff2, :layout => false
+  title = "Staff2"
+  cz = "/ucitele2"
+  erb :staff2, :layout => :lay_english, :locals => {:title => title, :cz => cz}
+  
 end
 
 get '/staff3' do
-  erb :staff3, :layout => false
+  title = "Staff3"
+  cz = "/ucitele3"
+  erb :staff3, :layout => :lay_english, :locals => {:title => title, :cz => cz}
+  
 end
 
 post '/contact_submit' do
