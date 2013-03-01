@@ -370,6 +370,19 @@ get '/homelog' do
   erb :homelog, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
+get '/council' do
+  title = "Student's council"
+  cz = "/parlament"
+  erb :council, :layout => :lay_english, :locals => {:title => title, :cz => cz} 
+end
+
+get '/parlament' do
+  title = "Žákovský parlament"
+  en = "/council"
+  erb :parlament, :layout => :lay_czech, :locals => {:title => title, :en => en}
+end
+
+
 
 
 #newsletter

@@ -389,9 +389,31 @@ div.images {
 /*--- FOOTER ---*/
 #footer {
 	color:#aaa;
-	padding-bottom:1em;
+	margin:-30px 0 0px;
+	min-height:300px;
 }
 
+
+#footer>div {
+	float:left;
+	display: inline-block;
+	margin-right: 40px;
+	max-width: 25%;
+	text-align: center;
+}
+
+#footer div .imgwrapper {
+	min-height: 80px;
+	display:table;
+	width: 100%;
+	
+}
+
+#footer div .imgwrapper a {
+	display: table-cell;
+	vertical-align: middle;
+
+}
 
 /* newsletter */
 

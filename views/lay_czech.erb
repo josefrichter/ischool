@@ -40,6 +40,7 @@
 					<li><a class="<%= 'active' if request.path.include? '/ucitele' %>" href="<%= base_url %>/ucitele">učitelé</a></li>
 					<li><a class="<%= 'active' if request.path == '/kontakt' %>" href="<%= base_url %>/kontakt">kontakt</a></li>
 					<li><a class="<%= 'active' if request.path == '/galerie' %>" href="<%= base_url %>/galerie">galerie</a></li>
+					<li><a class="<%= 'active' if request.path == '/parlament' %>" href="<%= base_url %>/parlament">parlament</a></li>
 					<li><a class="icon-outlink3" href="http://intranet.ischool.cz">intranet </a></li>
 					<li><a class="icon-outlink3" href="/zakovska">žákovská </a></li>
 				</ul>
@@ -52,8 +53,25 @@
 				<%= yield %>
 				
 			</div><!-- #body -->
+
 			<div id="footer">
-				<a href="http://www.josefrichter.com">Design a vývoj webu Josef Richter www.josefrichter.com</a>
+
+				<h6>Links:</h6>
+
+				<div>
+					<div class="imgwrapper">
+						<a href="http://www.itstennis.cz/" alt="Tenisová akademie ITS Tennis Olomouc"><img src="<%= base_url %>/images/ITS_logo_small.png" alt="Logo Tenisová akademie ITS Tennis Olomouc"></a>	
+					</div>
+					<a href="http://www.itstennis.cz/" alt="Tenisová akademie ITS Tennis Olomouc">Tenisová akademie<br/>ITS Tennis Olomouc</a>
+				</div>
+
+				<div>
+					<div class="imgwrapper">
+						<a href="http://www.iphonedesign.info" alt="Web design and development by Josef Richter"><img src="<%= base_url %>/images/jri_logo.png" alt="Web design and development by Josef Richter"></a>	
+					</div>
+					<a href="http://www.iphonedesign.info">Design a vývoj webu Josef Richter</a>	
+				</div>
+
 			</div>
 		</div><!-- #wrapper -->
 		<%= erb(:analytics, :layout => false) %>
