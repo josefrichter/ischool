@@ -393,7 +393,7 @@ div.images {
 	min-height:300px;
 }
 
-#footer>div {
+#footer>div.logos {
 	float:left;
 	display: inline-block;
 	margin-right: 40px;
@@ -412,6 +412,11 @@ div.images {
 	display: table-cell;
 	vertical-align: middle;
 
+}
+
+#footer div.registry {
+	clear:both;
+	padding:20px 0;
 }
 
 /* newsletter */

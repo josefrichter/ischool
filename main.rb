@@ -372,14 +372,14 @@ end
 
 get '/council' do
   title = "Student's council"
-  cz = "/parlament"
+  cz = "/rada"
   erb :council, :layout => :lay_english, :locals => {:title => title, :cz => cz} 
 end
 
-get '/parlament' do
-  title = "Žákovský parlament"
+get '/rada' do
+  title = "Žákovská rada"
   en = "/council"
-  erb :parlament, :layout => :lay_czech, :locals => {:title => title, :en => en}
+  erb :rada, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 
