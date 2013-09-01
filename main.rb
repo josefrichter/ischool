@@ -283,6 +283,12 @@ get '/new-preschool-building' do
   erb :newbuilding, :layout => :lay_english, :locals => {:title => title, :cz => cz}
 end
 
+get '/aims' do
+  title = "Mission & Aims"
+  cz = "/cile"
+  erb :aims, :layout => :lay_english, :locals => {:title => title, :cz => cz}
+end
+
 # czech versions
 
 get '/domu' do
@@ -382,7 +388,11 @@ get '/rada' do
   erb :rada, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
-
+get '/cile' do
+  title = "Mise a cíle"
+  en = "/aims"
+  erb :cile, :layout => :lay_czech, :locals => {:title => title, :en => en}
+end
 
 
 #newsletter
