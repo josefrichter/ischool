@@ -1,5 +1,5 @@
 set :application, "ischoolcz"
-set :repository, "git://github.com/josefrichter/ischool.git"
+set :repository, "https://github.com/josefrichter/ischool.git"
 set :scm, "git"
 
 role :web, "server5.railshosting.cz"
