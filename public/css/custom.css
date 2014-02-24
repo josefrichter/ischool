@@ -396,8 +396,8 @@ div.images {
 #footer>div.logos {
 	float:left;
 	display: inline-block;
-	margin-right: 40px;
-	max-width: 25%;
+	margin-right: 25px;
+	max-width: 20%;
 	text-align: center;
 }
 
