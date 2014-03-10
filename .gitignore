@@ -1,2 +1,4 @@
 *.log
 .DS_store
+config/initializers/bypass_ssl_verification.rb
+public/localdev
