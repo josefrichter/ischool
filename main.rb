@@ -251,6 +251,13 @@ get '/staff3' do
   
 end
 
+get '/staff4' do
+  title = "Staff4"
+  cz = "/ucitele4"
+  erb :staff4, :layout => :lay_english, :locals => {:title => title, :cz => cz}
+  
+end
+
 post '/contact_submit' do
   Pony.mail(
     :to => 'info@ischool.cz', 
@@ -330,6 +337,12 @@ get '/ucitele3' do
   title = "Učitelé 3"
   en = "/staff3"
   erb :ucitele3, :layout => :lay_czech, :locals => {:title => title, :en => en}
+end
+
+get '/ucitele4' do
+  title = "Učitelé 4"
+  en = "/staff4"
+  erb :ucitele4, :layout => :lay_czech, :locals => {:title => title, :en => en}
 end
 
 get '/kontakt' do
